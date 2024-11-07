@@ -40,12 +40,9 @@ const showEllipsisBeforeCurrentPage = computed(() => {
   return currentPage.value > 6 && !firstPages.value.includes(currentPage.value);
 });
 
-const showEllipsisAfterCurrentPage = computed(() => {
-  return currentPage.value < totalPages.value - 5 && !lastPages.value.includes(currentPage.value);
-});
 
 // Método para alterar a página
-const changePage = (page) => {
+const changePage = (page: number) => {
   currentPage.value = page;
   fetchPokemons(page)
 
